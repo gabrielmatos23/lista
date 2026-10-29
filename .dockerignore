@@ -1,0 +1,9 @@
+.git
+.npm-cache
+.composer-cache
+node_modules
+vendor
+.env
+database/database.sqlite
+cypress/screenshots
+cypress/videos

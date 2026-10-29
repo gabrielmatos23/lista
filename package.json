@@ -1,0 +1,17 @@
+{
+  "name": "doce-gestao",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "cy:open": "node scripts/cypress.cjs open",
+    "cy:run": "node scripts/cypress.cjs run",
+    "test:php": "php artisan test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "cypress": "^16.2.1"
+  }
+}

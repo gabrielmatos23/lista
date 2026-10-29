@@ -1,0 +1,20 @@
+Cypress.Commands.add('criarProduto', (dados) => {
+  cy.visit('/products/create')
+  cy.get('[data-cy="product-name"]').type(dados.name)
+  cy.get('[data-cy="product-category"]').select(dados.category)
+  cy.get('[data-cy="product-price"]').clear().type(String(dados.price))
+  cy.get('[data-cy="product-stock"]').clear().type(String(dados.stock))
+  cy.get('[data-cy="product-minimum-stock"]').clear().type(String(dados.minimum_stock))
+  cy.get('[data-cy="save-product"]').click()
+  cy.url().should('include', '/products')
+})
+
+Cypress.Commands.add('criarCliente', (dados) => {
+  cy.visit('/clients/create')
+  cy.get('[data-cy="client-name"]').type(dados.name)
+  if (dados.email) cy.get('[data-cy="client-email"]').type(dados.email)
+  if (dados.phone) cy.get('[data-cy="client-phone"]').type(dados.phone)
+  if (dados.address) cy.get('[data-cy="client-address"]').type(dados.address)
+  cy.get('[data-cy="save-client"]').click()
+  cy.url().should('include', '/clients')
+})
